@@ -1,3 +1,2 @@
 包含多线程通信 
 进程间管道通信
-lcd的framebuffer程序
