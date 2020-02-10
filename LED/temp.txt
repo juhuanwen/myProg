@@ -1,0 +1,24 @@
+/driver/gpio/
+int gpiochip_add(struct gpio_chip *chip)
+int gpiochip_remove(struct gpio_chip *chip)
+int gpio_request(unsigned gpio, const char *label)
+void gpio_free(unsigned gpio)
+const char *gpiochip_is_requested(struct gpio_chip *chip, unsigned offset)
+int gpio_direction_input(unsigned gpio)
+int gpio_direction_output(unsigned gpio, int value)
+int __gpio_get_value(unsigned gpio)
+void __gpio_set_value(unsigned gpio, int value)
+
+/arch/arm/plat-s3c
+__init void s3c_gpiolib_add(struct s3c_gpio_chip *chip)
+static int s3c_gpiolib_get(struct gpio_chip *chip, unsigned offset)
+static void s3c_gpiolib_set(struct gpio_chip *chip,unsigned offset, int value)
+
+
+static DECLARE_WAIT_QUEUE_HEAD(button_waitq);
+wait_event_interruptible(button_waitq, ev_press);
+wake_up_interruptible(&button_waitq);
+
+
+
+
