@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/linux_little_share/myProg/Kernel_timer/drv_timer.ko := arm-linux-ld -EL -r  -T /home/samba/linux-2.6.32.2/scripts/module-common.lds --build-id -o /mnt/hgfs/linux_little_share/myProg/Kernel_timer/drv_timer.ko /mnt/hgfs/linux_little_share/myProg/Kernel_timer/drv_timer.o /mnt/hgfs/linux_little_share/myProg/Kernel_timer/drv_timer.mod.o

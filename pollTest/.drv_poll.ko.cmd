@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/linux_little_share/myProg/pollTest/drv_poll.ko := arm-linux-ld -EL -r  -T /home/samba/linux-2.6.32.2/scripts/module-common.lds --build-id -o /mnt/hgfs/linux_little_share/myProg/pollTest/drv_poll.ko /mnt/hgfs/linux_little_share/myProg/pollTest/drv_poll.o /mnt/hgfs/linux_little_share/myProg/pollTest/drv_poll.mod.o
