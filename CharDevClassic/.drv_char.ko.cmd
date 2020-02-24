@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.ko := arm-linux-ld -EL -r  -T /home/samba/linux-2.6.32.2/scripts/module-common.lds --build-id -o /mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.ko /mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.o /mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.mod.o
