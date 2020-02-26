@@ -426,6 +426,17 @@ deps_/mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.o := \
   include/linux/vmstat.h \
     $(wildcard include/config/vm/event/counters.h) \
   include/linux/ioport.h \
+  include/linux/device.h \
+    $(wildcard include/config/debug/devres.h) \
+    $(wildcard include/config/devtmpfs.h) \
+  include/linux/klist.h \
+  include/linux/pm.h \
+    $(wildcard include/config/pm/sleep.h) \
+    $(wildcard include/config/pm/runtime.h) \
+  /home/samba/linux-2.6.32.2/arch/arm/include/asm/device.h \
+    $(wildcard include/config/dmabounce.h) \
+  include/linux/pm_wakeup.h \
+    $(wildcard include/config/pm.h) \
 
 /mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.o: $(deps_/mnt/hgfs/linux_little_share/myProg/CharDevClassic/drv_char.o)
 

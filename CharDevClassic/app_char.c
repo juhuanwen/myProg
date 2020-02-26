@@ -6,7 +6,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define DEV_NAME "/dev/mychar"
+#define DEV_NAME "dev/mychar"///
 
 int main()
 {

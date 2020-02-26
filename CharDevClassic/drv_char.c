@@ -7,6 +7,7 @@
 #include <asm/io.h>
 #include <linux/mm.h>
 #include <linux/ioport.h>
+#include <linux/device.h>
 
 #define CHR_NAME "mychar"
 //#define CHR_MAJOR 200
@@ -18,7 +19,9 @@ static struct cdev mycdev;
 
 static unsigned long *gpbconf=NULL;
 static unsigned long *gpbdat=NULL;
-/* static unsigned long *gpbup=NULL; */
+static unsigned long *gpbup=NULL; 
+
+static struct class * chr_class;
 
 static int mycdev_open(struct inode *inode, struct file *file)
 {
@@ -80,6 +83,9 @@ static int __init CHR_init(void)
 	
 	cdev_init(&mycdev,&mychar_fops);
 	cdev_add(&mycdev,dev_id,CHR_COUNT);
+	chr_class=class_create(THIS_MODULE, "mychar_class");
+	device_create(chr_class, NULL, dev_id,NULL, "mychar");
+	
 	return 0;
 	
 }
@@ -88,6 +94,8 @@ static void __exit CHR_exit(void)
 
 	cdev_del(&mycdev);
 	unregister_chrdev_region(dev_id, CHR_COUNT);
+	device_destroy(chr_class,dev_id);
+	class_destroy(chr_class);
 }
 module_init(CHR_init);
 module_exit(CHR_exit);
