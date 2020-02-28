@@ -1,0 +1,1 @@
+通过echo sys/class/gpio 方式配置引脚中断，并用poll监听中断
